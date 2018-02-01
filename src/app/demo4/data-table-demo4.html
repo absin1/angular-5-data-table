@@ -1,0 +1,56 @@
+<div style="margin: auto; max-width: 1000px; margin-bottom: 50px;">
+    <data-table id="persons-grids"
+        headerTitle="Employees"
+        [items]="items"
+        [itemCount]="itemCount"
+        (reload)="reloadItems($event)"
+
+        (rowClick)="rowClick($event)"
+        (rowDoubleClick)="rowDoubleClick($event)"
+        [rowTooltip]="rowTooltip"
+        >
+        <data-table-column
+            [property]="'course_id'"
+            [header]="'Course ID'"
+            [sortable]="true"
+            [resizable]="true">
+        </data-table-column>
+        <data-table-column
+            [property]="'lesson_id'"
+            [header]="'Lesson ID'"
+            [sortable]="true"
+            [resizable]="true">
+        </data-table-column>
+        <data-table-column
+            [property]="'cmsession_id'"
+            [header]="'Session ID'"
+            [sortable]="true"
+            [resizable]="true">
+        </data-table-column>
+        <data-table-column
+            [property]="'module_id'"
+            [header]="'Module ID'"
+            [sortable]="true"
+            [resizable]="true">
+        </data-table-column>
+        <data-table-column
+            [property]="'url'"
+            [header]="'Title'"
+            [sortable]="true"
+            [resizable]="true">
+        </data-table-column>
+        <data-table-column
+            [property]="'updated_at'"
+            [header]="'Date'"
+            [sortable]="true">
+            <ng-template #dataTableCell let-item="item">
+                <span>{{item.updated_at | date:'yyyy-MM-dd hh:mm:ss'}}</span>
+            </ng-template>
+        </data-table-column>
+        <data-table-column
+            property="id"
+            header="Id">
+        </data-table-column>
+
+    </data-table>
+</div>
